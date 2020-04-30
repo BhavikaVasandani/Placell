@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".StudentInfo"
+    android:background="@color/whiteBodyColor"
+    android:focusableInTouchMode="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteBodyColor"
+        android:orientation="vertical"
+        tools:context=".StudentInfo">
+
+        <RelativeLayout
+            android:id="@+id/first_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+
+            <ImageView
+                android:id="@+id/welcomeImg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_boy" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/personalDetailsCard"
+                style="@style/centreLocatorCardDesign"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/welcomeImg"
+                app:cardBackgroundColor="@color/cardBack"
+                app:cardCornerRadius="16dp"
+                android:padding="10dp"
+                app:cardElevation="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputName"
+                        style="@style/parent"
+                        android:textColorHint="#f0f0f0"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/companyName"
+                            style="@style/modifiedEditText"
+                            android:inputType="textPersonName"
+                            android:textColor="@android:color/white"
+                            android:maxLines="1"
+                            android:textSize="18sp"
+                            android:hint="Enter Company Name"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputEmail"
+                        style="@style/parent"
+                        android:textColorHint="#f0f0f0"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/companyEmail"
+                            style="@style/modifiedEditText"
+                            android:inputType="textPersonName"
+                            android:textColor="@android:color/white"
+                            android:maxLines="1"
+                            android:textSize="18sp"
+                            android:hint="Enter Email"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputDescription"
+                        style="@style/parent"
+                        android:textColorHint="#f0f0f0"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/companyDescription"
+                            style="@style/modifiedEditText"
+                            android:inputType="textPersonName"
+                            android:textColor="@android:color/white"
+                            android:maxLines="1"
+                            android:textSize="18sp"
+                            android:hint="Enter Description"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/parent"
+                        android:textColorHint="#f0f0f0"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/companyVacancies"
+                            style="@style/modifiedEditText"
+                            android:inputType="text"
+                            android:textColor="@android:color/white"
+                            android:maxLines="1"
+                            android:textSize="18sp"
+                            android:hint="Enter Vacancies"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/parent"
+                        android:textColorHint="#f0f0f0"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/companyPlaced"
+                            style="@style/modifiedEditText"
+                            android:inputType="text"
+                            android:textColor="@android:color/white"
+                            android:maxLines="1"
+                            android:textSize="18sp"
+                            android:hint="Enter no of Placed Students"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/parent"
+                            android:textColorHint="#f0f0f0"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="@dimen/loginViewsMargin">
+                            <EditText
+                                android:id="@+id/companyDate"
+                                style="@style/modifiedEditText"
+                                android:inputType="text"
+                                android:textColor="@android:color/white"
+                                android:maxLines="1"
+                                android:textSize="18sp"
+                                android:hint="Enter Date of visiting Campus"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <Button
+                        android:id="@+id/submit"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/btn_selected_style"
+                        android:layout_gravity="center"
+                        android:textColor="#fff"
+                        android:layout_marginBottom="40dp"
+                        android:textAllCaps="false"
+                        android:text="Continue"
+                        android:padding="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#2d2d2d"
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/ic_arrow_back_black" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

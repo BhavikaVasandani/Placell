@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Forum"
+            style="@style/viewParent.headerText" />
+        <TextView
+            android:text="#StayHomeStaySafe"
+            style="@style/viewParent.headerText.contentText"
+            android:textColor="#3f729b"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

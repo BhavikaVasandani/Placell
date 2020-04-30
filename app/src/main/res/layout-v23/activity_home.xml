@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.project.placementcell.Home">
+    <EditText
+        android:id="@+id/clas"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:hint="Enter Class"
+        android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/sem"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Enter Semester"
+        android:inputType="textPassword" />
+    <Button
+        android:id="@+id/addData"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Submit"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/display"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Display"
+        android:layout_gravity="center"
+        android:textAllCaps="false" />
+</LinearLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "133631481785",
+    "firebase_url": "https://placementcell-88677.firebaseio.com",
+    "project_id": "placementcell-88677",
+    "storage_bucket": "placementcell-88677.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133631481785:android:35e52ebf11c7b9dea30868",
+        "android_client_info": {
+          "package_name": "com.project.placementcell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133631481785-abvcdrpitadrenp6ahhp4nh3q6oblg8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQfRXKNvz7nBJX70vnD-mEGchcsSLUUGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133631481785-abvcdrpitadrenp6ahhp4nh3q6oblg8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

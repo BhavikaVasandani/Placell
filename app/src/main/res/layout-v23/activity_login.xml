@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#fff"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:layout_gravity="center">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:paddingTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    style="@style/viewParent.headerText.NoMode"
+                    android:text="Already \nhave an \nAccount?"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_login_hero"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
+                style="@style/parent"
+                android:textColorHint="#656565"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <EditText
+                    android:id="@+id/userEmail"
+                    style="@style/modifiedEditText"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/black"
+                    android:maxLines="1"
+                    android:hint="Enter Mail"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                style="@style/parent"
+                android:textColorHint="#656565"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <EditText
+                    android:id="@+id/userPwd"
+                    style="@style/modifiedEditText"
+                    android:inputType="textPassword"
+                    android:textColor="@android:color/black"
+                    android:maxLines="1"
+                    android:hint="Enter Password"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/forgotPass"
+                style="@style/viewParent"
+                android:text="Forgot Password?"
+                android:textColor="#fe104d"
+                android:textSize="@dimen/newsMoreTextSize"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/login"
+                android:text="Login"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:textStyle="bold"
+                android:background="@drawable/btn_gradient_style"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/register"
+                style="@style/parent"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="#fe104d"
+                android:textSize="17sp"
+                android:text="New user? Register Now"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+            <TextView
+                android:id="@+id/barcode"
+                style="@style/parent"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/bottomNavigationSelectedColor"
+                android:textSize="17sp"
+                android:text="Login by scanning barcode"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

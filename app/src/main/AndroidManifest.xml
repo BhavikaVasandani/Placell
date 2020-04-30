@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.placementcell">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/student"
+        android:label="Placement Cell"
+        android:roundIcon="@drawable/student"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Student"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="barcode" /> <!-- To use multiple models: android:value="barcode,model2,model3" -->
+        <activity
+            android:name=".addForumData"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <activity
+            android:name=".addForumActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".CompanyDetails"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Company"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".StudentInfo"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Register"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".BarcodeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".InsertCompany"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+    </application>
+
+</manifest>
