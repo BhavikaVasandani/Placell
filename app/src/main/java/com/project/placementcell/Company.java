@@ -1,8 +1,10 @@
 package com.project.placementcell;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +25,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static androidx.core.content.ContextCompat.startActivity;
+import static com.project.placementcell.LoginActivity.UID;
 
 public class Company extends AppCompatActivity {
     EditText search;
@@ -71,6 +77,7 @@ public class Company extends AppCompatActivity {
 
             }
         });
+
         search.setOnEditorActionListener(
                 new TextView.OnEditorActionListener() {
                     @Override

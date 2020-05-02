@@ -46,9 +46,9 @@ public class MyHelper {
 	}
 
 	public static File createTempFile(File file) {
-		File dir = new File(Environment.getExternalStorageDirectory().getPath() + "/com.example.mlkit");
+		File dir = new File(Environment.getExternalStorageDirectory().getPath() + "/com.project.placementcell");
 		if (!dir.exists() || !dir.isDirectory()) {
-			//noinspection ResultOfMethodCallIgnored
+			//noinspection ResultOfMethodCazllIgnored
 			dir.mkdirs();
 		}
 		if (file == null) {

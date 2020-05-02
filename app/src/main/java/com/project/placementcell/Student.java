@@ -19,8 +19,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Student extends AppCompatActivity {
     RecyclerView rv,rv1;
@@ -42,8 +44,8 @@ public class Student extends AppCompatActivity {
         listData1 = new ArrayList<>();
 
         search = findViewById(R.id.search);
-        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("Student");
-        final DatabaseReference nm1 = FirebaseDatabase.getInstance().getReference().child("Student");
+        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("student");
+        final DatabaseReference nm1 = FirebaseDatabase.getInstance().getReference().child("student");
 
         nm.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -103,8 +105,10 @@ public class Student extends AppCompatActivity {
                                             String name = dataSnapshot.child("name").getValue(String.class);
                                             String description = dataSnapshot.child("description").getValue(String.class);
                                             Log.d("TAG", name + " / " + description);
+
                                         }
-                                    }
+                                        }
+
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError databaseError) {

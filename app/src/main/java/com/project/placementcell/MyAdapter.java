@@ -1,15 +1,21 @@
 package com.project.placementcell;
 
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import static androidx.core.content.ContextCompat.startActivity;
+import static com.project.placementcell.LoginActivity.UID;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private List<ListData> listData;
@@ -30,6 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
       ListData ld=listData.get(position);
       holder.txtname.setText(ld.getName());
       holder.descriptiontxt.setText(ld.getDescription());
+
     }
 
     @Override
@@ -43,6 +50,15 @@ private TextView txtid,txtname,descriptiontxt;
             super(itemView);
             txtname=(TextView)itemView.findViewById(R.id.nametxt);
             descriptiontxt=(TextView)itemView.findViewById(R.id.descriptiontxt);
+            CardView company=itemView.findViewById(R.id.company);
+            company.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(),CompanyDetails.class).putExtra("company",txtname.getText().toString());
+                v.getContext().startActivity(intent);
+
+                }
+            });
         }
     }
 }
