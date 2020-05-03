@@ -14,7 +14,8 @@
         android:roundIcon="@drawable/student"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Notification"></activity>
+        <activity android:name=".Notification"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Student"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
