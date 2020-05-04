@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         String token = task.getResult().getToken();
 
                         Log.d("token",token);
-                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, FirebaseAuth.getInstance().getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
                     }
                 });
 

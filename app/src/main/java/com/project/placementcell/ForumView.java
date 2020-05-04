@@ -54,8 +54,7 @@ public class ForumView extends Fragment {
                     String text = dataSnapshot.child("messageText").getValue(String.class);
                     String user= dataSnapshot.child("messageUser").getValue(String.class);
                     Log.d("TAG", text + " / " + user);
-                    adapter.notifyDataSetChanged();
-
+               //     adapter.notifyDataSetChanged();
                 }
             }
 
@@ -84,6 +83,8 @@ public class ForumView extends Fragment {
                         .setValue(new ListData2(input.getText().toString() ));
                 // Clear the input
                 input.setText("");
+                listData = new ArrayList<>();
+
                 final DatabaseReference nm = FirebaseDatabase.getInstance().getReference("messages");
 
                 nm.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -92,6 +93,7 @@ public class ForumView extends Fragment {
                         if (dataSnapshot.exists()) {
                             for (DataSnapshot npsnapshot : dataSnapshot.getChildren()) {
                                 ListData2 l = npsnapshot.getValue(ListData2.class);
+
                                 listData.add(l);
                             }
 

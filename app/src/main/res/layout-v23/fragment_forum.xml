@@ -27,7 +27,8 @@
                             android:id="@+id/recyclerview"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                           >
+
+                            >
                         </androidx.recyclerview.widget.RecyclerView>
 
 
@@ -61,7 +62,7 @@
                                     android:maxLines="1"
                                     android:textColor="@color/cardBack"
                                     android:textSize="18sp"
-
+                                        android:layout_alignParentBottom="true"
                                     />
 
                                 <ListView

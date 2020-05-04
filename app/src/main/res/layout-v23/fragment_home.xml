@@ -118,7 +118,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
-                            android:text="Introducing postpaid \nfor shopping."
+                            android:text="Feedback for placed \n and interview company"
                             android:textColor="@color/whiteBodyColor"
                             android:textSize="13sp"
                             android:textStyle="bold" />
@@ -173,7 +173,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
-                            android:text="Introducing postpaid \nfor shopping."
+                            android:text="Enter Company Details"
                             android:textColor="@color/whiteBodyColor"
                             android:textSize="13sp"
                             android:textStyle="bold" />
@@ -228,7 +228,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
                             android:layout_marginLeft="20dp"
-                            android:text="Introducing postpaid \nfor shopping."
+                            android:text="View Student Details"
                             android:textColor="@color/whiteBodyColor"
                             android:textSize="13sp"
                             android:textStyle="bold" />
