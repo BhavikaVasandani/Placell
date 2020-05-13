@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ScrollView;
 
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 public class ForumView extends Fragment {
     RecyclerView rv;
     ArrayList listData;
-
+    NestedScrollView sc;
     FirebaseAuth auth;
     MessageAdapter adapter;
     @Nullable
@@ -35,7 +37,15 @@ public class ForumView extends Fragment {
         rv = (RecyclerView) view.findViewById(R.id.recyclerview);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        sc=view.findViewById(R.id.myscroll);
+        sc.fullScroll(ScrollView.FOCUS_DOWN);
+        sc.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //replace this line to scroll up or down
+                sc.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        }, 10000);
         listData = new ArrayList<>();
         final DatabaseReference nm = FirebaseDatabase.getInstance().getReference("messages");
 

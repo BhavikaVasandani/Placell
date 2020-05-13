@@ -15,12 +15,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Register  extends AppCompatActivity {
     EditText email,pwd;
     Button signup, login;
     String pass,mail;
     TextView Already_account;
+    DatabaseReference reference;
 
     FirebaseAuth auth;
 
@@ -57,6 +62,20 @@ public class Register  extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()) {
+                                HashMap<String, Object> data = new HashMap<>();
+
+                                reference = FirebaseDatabase.getInstance().getReference().child("student").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                data.put("type", "student");
+                                reference.updateChildren(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(getApplicationContext(), "Data updated", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
+
                                 Toast.makeText(Register.this,"Signup Successful",Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(Register.this, MainActivity.class));
                                 finish();
