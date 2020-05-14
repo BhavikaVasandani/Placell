@@ -22,6 +22,7 @@ public class ProfileView extends Fragment {
         TextView logout = view.findViewById(R.id.settingsLogout);
         TextView editProfile = view.findViewById(R.id.editProfile);
        TextView notification=view.findViewById(R.id.notification);
+       TextView report=view.findViewById(R.id.report);
             RelativeLayout display=view.findViewById(R.id.display);
             editProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -46,6 +47,13 @@ public class ProfileView extends Fragment {
                @Override
                public void onClick(View v) {
                    startActivity(new Intent(getActivity(), DisplayStudent.class));
+               }
+           });
+           report.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   startActivity(new Intent(getActivity(), Report.class));
+
                }
            });
        return view;

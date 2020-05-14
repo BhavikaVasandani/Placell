@@ -83,5 +83,10 @@
             style="@style/viewParent.headerText.settingsTextIcon"
             android:drawableLeft="@drawable/ic_logout"
             android:text="Logout" />
+        <TextView
+            android:id="@+id/report"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_logout"
+            android:text="Report" />
     </LinearLayout>
 </ScrollView>
