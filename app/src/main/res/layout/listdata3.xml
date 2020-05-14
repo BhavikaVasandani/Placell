@@ -38,13 +38,6 @@
                 android:layout_marginStart="20dp"
                 android:textStyle="bold"/>
         </LinearLayout>
-        <ImageView
-            style="@style/homeCardImage"
-            android:layout_width="103dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
-            android:maxHeight="90dp"
-            android:src="@drawable/building" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

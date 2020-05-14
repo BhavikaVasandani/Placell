@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -18,9 +20,9 @@ public class ProfileView extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, null);
         TextView logout = view.findViewById(R.id.settingsLogout);
-      TextView editProfile = view.findViewById(R.id.editProfile);
-
-
+        TextView editProfile = view.findViewById(R.id.editProfile);
+       TextView notification=view.findViewById(R.id.notification);
+            RelativeLayout display=view.findViewById(R.id.display);
             editProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -34,7 +36,19 @@ public class ProfileView extends Fragment {
             startActivity(new Intent(getActivity(), LoginActivity.class));
         }
         });
-        return view;
+           notification.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), Notification.class));
+                }
+            });
+           display.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   startActivity(new Intent(getActivity(), DisplayStudent.class));
+               }
+           });
+       return view;
         }
 
 }

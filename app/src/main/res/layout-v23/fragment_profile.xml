@@ -20,9 +20,10 @@
             style="@style/viewParent.headerText.contentText"
             android:layout_marginBottom="20dp"/>
         <RelativeLayout
+            android:id="@+id/display"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/profile">
+            >
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile1"
                 android:layout_width="60dp"
@@ -71,18 +72,12 @@
         <TextView
             style="@style/viewParent.headerText.settingsMiniTitle"
             android:text="Notifications"/>
-        <Switch
+        <TextView
+            android:id="@+id/notification"
             style="@style/settingsText"
-            android:checked="true"
             android:drawableLeft="@drawable/ic_notifications"
             android:text="Notifications" />
-        <TextView
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:text="Regional"/>
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/ic_languages"
-            android:text="Language" />
+
         <TextView
             android:id="@+id/settingsLogout"
             style="@style/viewParent.headerText.settingsTextIcon"

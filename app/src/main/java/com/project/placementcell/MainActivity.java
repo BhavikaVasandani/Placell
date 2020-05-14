@@ -32,8 +32,7 @@ import com.google.firebase.iid.InstanceIdResult;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
-    public static String type;
-    String uid;
+    String type,uid;
   //  RelativeLayout profile;
     private BottomNavigationView bottomNavigationView;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
