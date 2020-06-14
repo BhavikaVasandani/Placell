@@ -14,39 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ic_edittext_bg"
-                android:hint="Search"
-                android:paddingStart="10dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/statusBarColor"
-                android:layout_marginBottom="15dp"
-                android:drawableEnd="@drawable/ic_search_black"
-                android:paddingEnd="10dp"
-                android:textColorHint="@color/miniTitleColor"
-                android:textStyle="bold"
-                android:inputType="textCapWords"
-                android:maxLines="1"
-                tools:ignore="RtlSymmetry" />
-
-            <androidx.recyclerview.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
             </androidx.recyclerview.widget.RecyclerView>
-
-
-
-
-
-
-
-
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

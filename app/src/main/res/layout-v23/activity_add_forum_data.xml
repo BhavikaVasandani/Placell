@@ -255,7 +255,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question 5"
+            android:text="Wha could have been don better?"
             android:textColor="#1b1b1b"
             android:textSize="30sp" />
         <TextView
@@ -313,7 +313,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question 6"
+            android:text="How was the overall experience"
             android:textColor="#1b1b1b"
             android:textSize="30sp" />
         <TextView
@@ -346,7 +346,7 @@
                 android:background="@drawable/circle_btn_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="A"
+                android:text="1"
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
@@ -356,7 +356,7 @@
                 android:background="@drawable/circle_btn_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="B"
+                android:text="2"
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
@@ -366,7 +366,7 @@
                 android:background="@drawable/circle_btn_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="C"
+                android:text="3"
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
@@ -376,7 +376,7 @@
                 android:background="@drawable/circle_btn_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="D"
+                android:text="4"
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="18sp"/>

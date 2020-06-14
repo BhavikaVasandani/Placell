@@ -96,6 +96,7 @@ public class BarcodeActivity extends BaseActivity {
 					checkStoragePermission(requestCode);
 					break;
 				case RC_SELECT_PICTURE:
+				try {
 					Uri dataUri = data.getData();
 					String path = MyHelper.getPath(this, dataUri);
 					if (path == null) {
@@ -108,45 +109,63 @@ public class BarcodeActivity extends BaseActivity {
 						mImageView.setImageBitmap(bitmap);
 						barcodeDetector(bitmap);
 					}
+				}
+				catch (Exception e)
+				{
+
+				}
 					break;
 				case RC_TAKE_PICTURE:
-					bitmap = MyHelper.resizeImage(imageFile, imageFile.getPath(), mImageView);
-					if (bitmap != null) {
-						mTextView.setText(null);
-						mImageView.setImageBitmap(bitmap);
-						barcodeDetector(bitmap);
+					try {
+						bitmap = MyHelper.resizeImage(imageFile, imageFile.getPath(), mImageView);
+						if (bitmap != null) {
+							mTextView.setText(null);
+							mImageView.setImageBitmap(bitmap);
+							barcodeDetector(bitmap);
+						}
+					}
+					catch (Exception e)
+					{
+
 					}
 					break;
 			}
 		}
 	}
 
-	private void barcodeDetector(Bitmap bitmap) {
-		FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
+	private void barcodeDetector(Bitmap bitmap) throws  Exception {
+
+			FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 		/*
 		FirebaseVisionBarcodeDetectorOptions options = new FirebaseVisionBarcodeDetectorOptions.Builder()
 				.setBarcodeFormats(FirebaseVisionBarcode.FORMAT_QR_CODE, FirebaseVisionBarcode.FORMAT_AZTEC)
 				.build();
 		*/
-		FirebaseVisionBarcodeDetector detector = FirebaseVision.getInstance().getVisionBarcodeDetector();
-		detector.detectInImage(image).addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
-			@Override
-			public void onSuccess(List<FirebaseVisionBarcode> firebaseVisionBarcodes) {
-				mTextView.setText(getInfoFromBarcode(firebaseVisionBarcodes));
+
+			FirebaseVisionBarcodeDetector detector = FirebaseVision.getInstance().getVisionBarcodeDetector();
+			detector.detectInImage(image).addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
+
+				@Override
+				public void onSuccess(List<FirebaseVisionBarcode> firebaseVisionBarcodes) {
+
+					mTextView.setText(getInfoFromBarcode(firebaseVisionBarcodes));
+				}
+			}).addOnFailureListener(new OnFailureListener() {
+				@Override
+				public void onFailure(@NonNull Exception e) {
+					mTextView.setText(R.string.error_detect);
+				}
+			});
 			}
-		}).addOnFailureListener(new OnFailureListener() {
-			@Override
-			public void onFailure(@NonNull Exception e) {
-				mTextView.setText(R.string.error_detect);
-			}
-		});
-	}
+
+
 
 	private String getInfoFromBarcode(List<FirebaseVisionBarcode> barcodes) {
-		StringBuilder result = new StringBuilder();
-		for (FirebaseVisionBarcode barcode : barcodes) {
-			//int valueType = barcode.getValueType();
-			result.append(barcode.getRawValue() + "\n");
+		try {
+			StringBuilder result = new StringBuilder();
+			for (FirebaseVisionBarcode barcode : barcodes) {
+				//int valueType = barcode.getValueType();
+				result.append(barcode.getRawValue() + "\n");
 
 			/*
 			int valueType = barcode.getValueType();
@@ -162,11 +181,14 @@ public class BarcodeActivity extends BaseActivity {
 					break;
 			}
 			*/
-		}
-		if ("".equals(result.toString())) {
-			return getString(R.string.error_detect);
-		} else {
-			return result.toString();
+			}
+			if ("".equals(result.toString())) {
+				return getString(R.string.error_detect);
+			} else {
+				return result.toString();
+			}
+		} catch (Exception e) {
+			return "Nothing Selected";
 		}
 	}
 }

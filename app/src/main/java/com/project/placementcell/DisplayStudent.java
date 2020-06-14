@@ -55,7 +55,7 @@ public class DisplayStudent extends AppCompatActivity {
 
 
         uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
-        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("student").child(uid);
+        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("user").child(uid);
         nm.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

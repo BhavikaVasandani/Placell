@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
-    private List<ListData1> listData;
+    private List<ListData1> listData1;
 
     public StudentAdapter(List<ListData1> listData) {
-        this.listData = listData;
+        this.listData1 = listData;
     }
 
     @NonNull
@@ -29,7 +29,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ListData1 ld=listData.get(position);
+        ListData1 ld=listData1.get(position);
         holder.txtname.setText(ld.getName());
         holder.descriptiontxt.setText(ld.getGender());
     }
@@ -37,7 +37,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return listData.size();
+        return listData1.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

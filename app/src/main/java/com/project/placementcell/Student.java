@@ -25,11 +25,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Student extends AppCompatActivity {
-    RecyclerView rv,rv1;
-    ArrayList listData,listData1;
+    RecyclerView rv, rv1;
+    ArrayList listData, listData1;
     EditText search;
     FirebaseAuth auth;
     StudentAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +45,8 @@ public class Student extends AppCompatActivity {
         listData1 = new ArrayList<>();
 
         search = findViewById(R.id.search);
-        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("student");
-        final DatabaseReference nm1 = FirebaseDatabase.getInstance().getReference().child("student");
+        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("user");
+        final DatabaseReference nm1 = FirebaseDatabase.getInstance().getReference().child("user");
 
         nm.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,7 +63,7 @@ public class Student extends AppCompatActivity {
                     String name = dataSnapshot.child("Name").getValue(String.class);
                     String description = dataSnapshot.child("Gender").getValue(String.class);
                     Log.d("TAG", name + " / " + description);
-                    Toast.makeText(getApplicationContext(),name,Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG);
                 }
             }
 
@@ -71,56 +72,5 @@ public class Student extends AppCompatActivity {
 
             }
         });
-        search=findViewById(R.id.search);
-        search.setOnEditorActionListener(
-                new TextView.OnEditorActionListener() {
-                    @Override
-                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                        if (actionId == EditorInfo.IME_ACTION_SEARCH ||
-                                actionId == EditorInfo.IME_ACTION_DONE ||
-                                event != null &&
-                                        event.getAction() == KeyEvent.ACTION_DOWN &&
-                                        event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                            if (event == null || !event.isShiftPressed()) {
-                                // the user is done typing.
-                                listData1.clear();
-                                nm1.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(DataSnapshot dataSnapshot) {
-                                        if (dataSnapshot.exists()) {
-                                            for (DataSnapshot npsnapshot : dataSnapshot.getChildren()) {
-                                                ListData1 l = npsnapshot.getValue(ListData1.class);
-                                                String search1;
-
-                                                search1 = search.getText().toString().trim();
-
-                                                Toast.makeText(getApplicationContext(),search1,Toast.LENGTH_LONG).show();
-                                                if(l.getName().equalsIgnoreCase(search1))
-                                                    listData1.add(l);
-                                            }
-
-                                            adapter = new StudentAdapter(listData1);
-                                            rv1.setAdapter(adapter);
-
-                                            String name = dataSnapshot.child("name").getValue(String.class);
-                                            String description = dataSnapshot.child("description").getValue(String.class);
-                                            Log.d("TAG", name + " / " + description);
-
-                                        }
-                                        }
-
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                    }
-                                });
-                            }
-                            return true; // consume.
-                        }
-
-                        return false; // pass on to other listeners.
-                    }
-                });
     }
 }

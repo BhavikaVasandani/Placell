@@ -160,7 +160,7 @@ public class StudentInfo extends AppCompatActivity {
                 HashMap<String, Object> data = new HashMap<>();
 
                 auth = FirebaseAuth.getInstance();
-                reference = FirebaseDatabase.getInstance().getReference().child("student").child(new LoginActivity().UID);
+                reference = FirebaseDatabase.getInstance().getReference().child("user").child(new LoginActivity().UID);
                 data.put("Name", name1);
               data.put("Email", email1);
                 data.put("USN",usn1);

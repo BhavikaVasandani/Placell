@@ -221,7 +221,7 @@ public class addForumData extends AppCompatActivity {
                 HashMap<String, Object> data = new HashMap<>();
 
                 auth = FirebaseAuth.getInstance();
-                reference = FirebaseDatabase.getInstance().getReference().child(newString).child(new LoginActivity().UID).child("Company");
+                reference = FirebaseDatabase.getInstance().getReference().child(newString).child(auth.getCurrentUser().getUid()).child("Company");
                 data.put("Ques1", Ques1Str);
                 data.put("Ques2", Ques2Str);
                 data.put("Ques3", Ques3Str);

@@ -31,7 +31,7 @@ public class HomeView extends Fragment {
         final CardView insertCompany = view.findViewById(R.id.insertCompany);
         CardView displayStudent=view.findViewById(R.id.displayStudent);
         uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
-        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("student").child(uid);
+        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference().child("user").child(uid);
         nm.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
