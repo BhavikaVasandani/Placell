@@ -145,6 +145,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
+        AppCompatTextView nav_bot = headerView.findViewById(R.id.nav_bot);
+        nav_bot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ChatBot.class));
+            }
+        });
 
     }
     @Override

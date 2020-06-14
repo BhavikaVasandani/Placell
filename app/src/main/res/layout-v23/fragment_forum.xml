@@ -48,7 +48,7 @@
                                     android:layout_alignParentEnd="true"
                                     android:layout_alignParentBottom="true"
                                     android:clickable="true"
-                                    android:src="@drawable/ic_send_black_24dp"
+                                    android:src="@drawable/send"
                                     android:tint="@android:color/white"
 
                                     app:fabSize="mini" />

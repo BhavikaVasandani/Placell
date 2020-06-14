@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
         android:name=".MyFirebaseApp"
         android:allowBackup="true"
@@ -15,7 +15,10 @@
         android:roundIcon="@drawable/student"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Report"
+        <activity android:name=".ChatBot"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Report"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".DisplayStudent"
